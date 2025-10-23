@@ -1,21 +1,3 @@
-
-Instead of scheduling jobs in cron, you just prefix your command and run it however many times you want:
-
-```bash
-# Run it every time you login or something.
-$ once --period day -- ./backup.sh
-$ once --window 6h -- make deploy
-
-# only once though
-$ once --window 1h -- echo 'yoohoo'
-yoohoo
-$ once --window 1h -- echo 'yoohoo'
-Skipped: ran 1s ago; window 1h.
-```
-
-
----
-
 # once
 
 **Run any command — but never twice too soon.**
@@ -23,10 +5,10 @@ Skipped: ran 1s ago; window 1h.
 `once` is a lightweight Bash wrapper that ensures a command executes **at most once per time period** (hour/day/week/month) or within a **custom cooldown window** (like “6h” or “2d”).
 It’s perfect for scripts, CI jobs, or ad-hoc shell tasks you don’t want to repeat accidentally.
 
-Instead of scheduling jobs in cron, you just prefix your command:
+Instead of scheduling jobs in cron, you just prefix your command and run it however many times you want:
 
 ```bash
-# examples
+# Run it every time you login or something.
 $ once --period day -- ./backup.sh
 $ once --window 6h -- make deploy
 
