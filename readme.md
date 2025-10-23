@@ -35,10 +35,14 @@ In short: **run anything, but never twice too soon.**
 ## 🚀 Quick Start
 
 ```bash
-# Install
-curl -sSL https://example.com/once.sh -o ~/bin/once
-chmod +x ~/bin/once
+# Safe install (download → review → install)
+curl -fsSL https://raw.githubusercontent.com/svandragt/once/main/once.sh -o /tmp/once.sh
+less /tmp/once.sh # inspect before running and making it executable
 
+sudo install -m 0755 /tmp/once.sh /usr/local/bin/once
+chmod +x /usr/local/bin/once
+
+# EXAMPLES
 # Run something once per day
 once --period day -- ./backup.sh
 
