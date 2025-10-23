@@ -1,8 +1,8 @@
 
-Instead of scheduling jobs in cron, you just prefix your command:
+Instead of scheduling jobs in cron, you just prefix your command and run it however many times you want:
 
 ```bash
-# examples
+# Run it every time you login or something.
 $ once --period day -- ./backup.sh
 $ once --window 6h -- make deploy
 
